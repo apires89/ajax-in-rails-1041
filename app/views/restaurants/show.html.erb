@@ -7,12 +7,12 @@
 <h2><%= pluralize @restaurant.reviews.size, "review" %></h2>
 
 <div data-controller="insert-in-list">
-   <div data-insert-in-list-target="items">
+  <div data-insert-in-list-target="items">
     <% if @restaurant.reviews.blank? %>
       Be the first to leave a review for <%= @restaurant.name %>
     <% else %>
       <% @restaurant.reviews.each do |review| %>
-        <%= render "reviews/review", review: review %>
+        <%= render "review", review: review %>
       <% end %>
     <% end %>
   </div>

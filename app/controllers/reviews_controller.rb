@@ -8,10 +8,10 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.save
         format.html { redirect_to restaurant_path(@restaurant) }
-        format.json
+        format.json # Follow the classic Rails flow and look for a create.json view
       else
         format.html { render "restaurants/show", status: :unprocessable_entity }
-        format.json
+        format.json # Follow the classic Rails flow and look for a create.json view
       end
     end
 
